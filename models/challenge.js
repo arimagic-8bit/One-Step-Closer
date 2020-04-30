@@ -8,7 +8,7 @@ const challengeSchema = Schema({
       "water",
       "energy",
       "waste management",
-      "nourishment",
+      "nutrition",
       "consume",
       "other",
     ],
