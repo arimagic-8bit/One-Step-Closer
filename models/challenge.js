@@ -26,9 +26,9 @@ const challengeSchema = Schema({
     required: true,
   },
   status: Boolean,
-  author: userId,
-  usersDoingChallenge: [userId],
-  usersCompletedChallenge: [userId],
+  author: String,
+  usersDoingChallenge: [String],
+  usersCompletedChallenge: [String],
 });
 
 const Challenge = mongoose.model("Challenge", challengeSchema);
