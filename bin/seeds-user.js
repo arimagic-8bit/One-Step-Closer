@@ -6,29 +6,35 @@ const users = [
   {
     username: Pennywise,
     password: bananarama,
-    actualChallenges: [challengeId],
-    createdChallenges:[challengeId],
-    createdChallenges:[challengeId],
-    badges: [{ category: imageUrl}],
-    friends: [userId]
+    actualChallenges: [],
+    createdChallenges:[],
+    badges: [{
+              category: "waste management",
+              imageUrl: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28"
+          }],
+    friends: []
   },
   {
     username: Freddy,
     password: bananarama,
-    actualChallenges: [challengeId],
-    createdChallenges:[challengeId],
-    createdChallenges:[challengeId],
-    badges: [{ category: imageUrl}],
-    friends: [userId]
+    actualChallenges: [],
+    createdChallenges:[],
+    badges: [{ 
+               category: "",
+               imageUrl: ""
+            }],
+    friends: []
   },
   {
     username: Jason,
     password: bananarama,
-    actualChallenges: [challengeId],
-    createdChallenges:[challengeId],
-    createdChallenges:[challengeId],
-    badges: [{ category: imageUrl}],
-    friends: [userId]
+    actualChallenges: [],
+    createdChallenges:[],
+    badges: [{ 
+               category: "",
+               imageUrl: ""
+            }],
+    friends: []
   }
 ];
 

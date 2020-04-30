@@ -4,13 +4,14 @@ const Challenge = require('./../models/challenge');
 
 const challenges = [
   {
-    name: String,
-    image: String,
-    description: String,
-    status: Boolean,
-    author: userId,
-    usersDoingChallenge: [userId],
-    usersCompletedChallenge: [userId]
+    type: "Plastic",
+    name: "No Plastic Bag",
+    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    description: "Don't use plastic bags for a week. You will spare the Earth centuries of pollution",
+    status: false,
+    author: "",
+    usersDoingChallenge: [],
+    usersCompletedChallenge: []
   },
   {
     name: String,

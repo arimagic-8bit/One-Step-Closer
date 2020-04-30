@@ -2,9 +2,29 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const challengeSchema = Schema({
-  name: String,
-  image: String,
-  description: String,
+  type: {
+    type: String,
+    enum: [
+      "water",
+      "energy",
+      "waste management",
+      "nourishment",
+      "consume",
+      "other",
+    ],
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
   status: Boolean,
   author: userId,
   usersDoingChallenge: [userId],

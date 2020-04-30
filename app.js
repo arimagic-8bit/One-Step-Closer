@@ -18,6 +18,8 @@ const MongoStore = require("connect-mongo")(session);
 // ROUTERS
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const authRouter = require("./routes/auth");
+const challengeRouter = require("./routes/challenge");
 
 const DB_NAME = "OSC-project";
 
@@ -70,6 +72,8 @@ app.use(
 
 // ROUTES
 app.use("/", indexRouter);
+app.use("/auth", authRouter);
+app.use("/challenge", challengeRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
