@@ -9,6 +9,6 @@ challengeRouter.get("/", (req, res) => {
 
 // Type of challenge
 
-
+challengeRouter.get("/challenge/type", (res, req) => {});
 
 module.exports = challengeRouter;

@@ -21,17 +21,15 @@ const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const challengeRouter = require("./routes/challenge");
 
-const DB_NAME = "OSC-project";
-
 // MONGOOSE CONNECTION
 
 mongoose
-  .connect(`mongodb://localhost:27017/${DB_NAME}`, {
+  .connect(`mongodb://localhost:27017/${process.env.DB_NAME}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${DB_NAME}"`);
+    console.log(`Connected to Mongo! Database name: "${process.env.DB_NAME}"`);
   })
   .catch((err) => {
     console.error("Error connecting to mongo", err);

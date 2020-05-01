@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+require("dotenv").config();
 const Challenge = require("../models/challenge");
 
 const challenges = [
@@ -139,7 +140,7 @@ const challenges = [
 ];
 
 mongoose
-  .connect("mongodb://localhost/starter-code", {
+  .connect(`mongodb://localhost:27017/${process.env.DB_NAME}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
