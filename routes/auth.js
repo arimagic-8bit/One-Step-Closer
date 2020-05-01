@@ -83,7 +83,7 @@ authRouter.post("/login", (req, res, next) => {
           user.password = "****";
           req.session.currentUser = user;
 
-          res.redirect("/challenge");
+          res.redirect("/challenge"); //as we want the user to view directly the "main" page, we redirect his/her request (no information is shown) to the main page.
         }
       }
     })
