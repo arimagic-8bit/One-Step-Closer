@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Challenge = require("./../models/challenge");
+const Challenge = require("../models/challenge");
 
 const challenges = [
   {
@@ -77,7 +77,7 @@ const challenges = [
     type: "nutrition",
     name: "Veggie week",
     image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
-    description: "Try not to  eat meat for a week in total",
+    description: "Try not to eat meat for a week in total",
     status: false,
     author: "",
     usersDoingChallenge: [],
@@ -85,10 +85,10 @@ const challenges = [
   },
   {
     type: "nutrition",
-    name: "No Plastic Bag",
+    name: "Responsive Millenial",
     image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
     description:
-      "Don't use plastic bags for a week. You will spare the Earth centuries of pollution",
+      "Buy local and seasonal food during one week. Your local avocado producer will be in love with you!",
     status: false,
     author: "",
     usersDoingChallenge: [],
