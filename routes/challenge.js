@@ -14,24 +14,23 @@ challengeRouter.get("/", (req, res) => {
 
 challengeRouter.get("/list/:type", (req, res, next) => {
   const challengeType = req.params.type;
-  console.log("empisa");
 
-  console.log(Challenge);
   Challenge.find({ type: challengeType })
     .then((challenge) => {
-      console.log(challenge);
       res.render("challenge-views/type", { challenge });
     })
     .catch((err) => next(err));
 });
 
-challengeRouter.get("/:type/:id", (res, req, next) => {
+challengeRouter.get("/:id", (req, res, next) => {
   const challengeTypeId = req.params.id;
 
-  Challenge.findById(challengeTypeId).then((challengeId) => {
-    console.log(challengeId);
-    res.render("", { challengeId });
-  })
+  Challenge.findById(challengeTypeId)
+    .then((challengeId) => {
+      console.log(challengeId);
+      res.render("challenge-views/challengeDetail", { challengeId });
+    })
+    .catch((err) => next(err));
 });
 
 module.exports = challengeRouter;

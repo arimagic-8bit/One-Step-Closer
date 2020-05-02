@@ -77,7 +77,8 @@ const challenges = [
   {
     type: "nutrition",
     name: "Veggie week",
-    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    image:
+      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description: "Try not to eat meat for a week in total",
     status: false,
     author: "",
@@ -87,7 +88,8 @@ const challenges = [
   {
     type: "nutrition",
     name: "Responsive Millenial",
-    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    image:
+      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description:
       "Buy local and seasonal food during one week. Your local avocado producer will be in love with you!",
     status: false,
@@ -98,7 +100,8 @@ const challenges = [
   {
     type: "nutrition",
     name: "30 days veggie",
-    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    image:
+      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description:
       "If you shift from a regular diet to 30 days vegan, you could save up to aprox 3 animals!",
     status: false,
@@ -109,7 +112,8 @@ const challenges = [
   {
     type: "energy",
     name: "Close blinds",
-    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    image:
+      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description: "Close blinds on sunny windows on hot days during one week",
     status: false,
     author: "",
@@ -119,7 +123,8 @@ const challenges = [
   {
     type: "energy",
     name: "Stairs",
-    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    image:
+      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description: "Use stairs instead of the elevator during 7 days",
     status: false,
     author: "",
@@ -129,7 +134,8 @@ const challenges = [
   {
     type: "energy",
     name: "Shut down devices",
-    image: "https://images.app.goo.gl/vTKcXHuQtGFDzYy28",
+    image:
+      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description:
       "Shut down computers and monitors when not in use during one week",
     status: false,
