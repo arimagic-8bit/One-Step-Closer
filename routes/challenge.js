@@ -1,7 +1,7 @@
 const express = require("express");
 const challengeRouter = express.Router();
 
-const Challenge = require("./../bin/seed-challenge");
+const Challenge = require("./../models/challenge");
 
 // MAIN
 
@@ -14,6 +14,9 @@ challengeRouter.get("/", (req, res) => {
 
 challengeRouter.get("/list/:type", (req, res, next) => {
   const challengeType = req.params.type;
+  console.log("empisa");
+
+  console.log(Challenge);
   Challenge.find({ type: challengeType })
     .then((challenge) => {
       console.log(challenge);
@@ -22,11 +25,13 @@ challengeRouter.get("/list/:type", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-// challengeRouter.get("/:type/:id", (res, req, next) => {
-//   const challengeTypeId = req.params.type.id;
+challengeRouter.get("/:type/:id", (res, req, next) => {
+  const challengeTypeId = req.params.id;
 
-//   Challenge.findById(challengeTypeId)
-//     .then(())
-// });
+  Challenge.findById(challengeTypeId).then((challengeId) => {
+    console.log(challengeId);
+    res.render("", { challengeId });
+  })
+});
 
 module.exports = challengeRouter;

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 require("dotenv").config();
-const Challenge = require("../models/challenge");
+const Challenge = require("./../models/challenge");
 
 const challenges = [
   {
