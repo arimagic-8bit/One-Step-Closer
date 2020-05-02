@@ -25,6 +25,7 @@ const challengeRouter = require("./routes/challenge");
 
 mongoose
   .connect(`mongodb://localhost:27017/${process.env.DB_NAME}`, {
+    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

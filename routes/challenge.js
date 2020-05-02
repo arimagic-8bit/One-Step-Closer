@@ -12,6 +12,10 @@ challengeRouter.get("/", (req, res) => {
   res.render("challenge-views/challenge", { currentUser }); //render the view and user object
 });
 
+challengeRouter.get("/create", (req, res) => {
+  res.render("challenge-views/create"); //render the view
+});
+
 // Type of challenge
 
 challengeRouter.get("/list/:type", (req, res, next) => {
@@ -19,7 +23,7 @@ challengeRouter.get("/list/:type", (req, res, next) => {
 
   Challenge.find({ type: challengeType })
     .then((challenge) => {
-      res.render("challenge-views/type", { challenge });
+      res.render("challenge-views/type", { challenge, challengeType });
     })
     .catch((err) => next(err));
 });
@@ -42,7 +46,7 @@ challengeRouter.post("/:id/accept", (req, res, next) => {
   User.update({ _id: currentUser }, { $push: { actualChallenges: id } }) //return a promise
     .then((aceptedChallenge) => {
       console.log(aceptedChallenge);
-      res.render("/");
+      res.redirect("/users/actual");
     })
     .catch((err) => next(err));
 });

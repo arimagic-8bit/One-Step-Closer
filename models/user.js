@@ -17,7 +17,7 @@ const userSchema = Schema({
   createdChallenges: {
     type: [String],
   },
-  createdChallenges: {
+  completedChallenges: {
     type: [String],
   },
   badges: {
