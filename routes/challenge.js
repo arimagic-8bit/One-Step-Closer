@@ -3,6 +3,8 @@ const challengeRouter = express.Router();
 
 const Challenge = require("./../models/challenge");
 
+const User = require("./../models/user");
+
 // MAIN
 
 challengeRouter.get("/", (req, res) => {
@@ -29,6 +31,18 @@ challengeRouter.get("/:id", (req, res, next) => {
     .then((challengeId) => {
       console.log(challengeId);
       res.render("challenge-views/challengeDetail", { challengeId });
+    })
+    .catch((err) => next(err));
+});
+
+challengeRouter.post("/:id/accept", (req, res, next) => {
+  const id = req.params.id; // assign to a const the value of the key/pair in req.params
+  // the oterway is to deconstr. => const {id} = req.params
+  const currentUser = req.session.currentUser;
+  User.update({ _id: currentUser }, { $push: { actualChallenges: id } }) //return a promise
+    .then((aceptedChallenge) => {
+      console.log(aceptedChallenge);
+      res.render("/");
     })
     .catch((err) => next(err));
 });
