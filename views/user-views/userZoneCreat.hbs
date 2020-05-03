@@ -1,0 +1,19 @@
+
+<div>
+    <a href="/users/actual">Accepted</a>
+    <a href="/users/completed">Completed</a>
+    <a href="/users/created">Created</a>
+</div>
+
+<div>
+
+    {{#each user}}
+
+        {{#each createdChallenges}}
+
+        <h1>{{name}}</h1>
+
+        {{/each}}
+
+    {{/each}}
+</div>

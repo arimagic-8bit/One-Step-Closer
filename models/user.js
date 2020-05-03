@@ -21,9 +21,12 @@ const userSchema = Schema({
   createdChallenges: {
     type: [String],
   },
-  completedChallenges: {
-    type: [String],
-  },
+  completedChallenges: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Challenge",
+    },
+  ],
   badges: {
     type: [
       {

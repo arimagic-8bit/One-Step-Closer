@@ -1,5 +1,30 @@
-<form action="" method="post">
+<form id="create" action="/challenge/create" method="post">
 
+    <label for=''>Title</label>
+    <input type='text' name='name'>
 
+    <select name="type" id="type">
+        <option value="waste management">Waste Management</option>
+        <option value="water">Water</option>
+        <option value="nutrition">Nutrition</option>
+        <option value="energy">Energy</option>
+    </select>
+
+    <label for="">Description</label>
+    <input type="text" name="description">
+
+    <input type="file" id="myFile" name="image">
+
+    <label for="">Your username</label>
+    <input type="text" name="author">
+
+    <button type="submit">Create</button>
 
 </form>
+
+<div>
+    {{!-- Error message display --}}
+    {{#if errorMessage}}
+    <div class="error-message"> {{errorMessage}} </div>
+    {{/if}}
+</div>
