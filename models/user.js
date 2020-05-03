@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Challenge = mongoose.model("Challenge");
 
 const userSchema = Schema({
   username: {
@@ -11,9 +12,12 @@ const userSchema = Schema({
     type: String,
     required: true,
   },
-  actualChallenges: {
-    type: [String],
-  },
+  actualChallenges: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Challenge",
+    },
+  ],
   createdChallenges: {
     type: [String],
   },

@@ -42,7 +42,9 @@ challengeRouter.get("/:id", (req, res, next) => {
 challengeRouter.post("/:id/accept", (req, res, next) => {
   const id = req.params.id; // assign to a const the value of the key/pair in req.params
   // the oterway is to deconstr. => const {id} = req.params
-  const currentUser = req.session.currentUser;
+  // arriba estamos guardando la id del challenge
+  
+  const currentUser = req.session.currentUser; // guardamos el id del usuario de la sesión
   User.update({ _id: currentUser }, { $push: { actualChallenges: id } }) //return a promise
     .then((aceptedChallenge) => {
       console.log(aceptedChallenge);
