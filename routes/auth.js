@@ -1,6 +1,7 @@
 const express = require("express");
 const authRouter = express.Router();
 const User = require("./../models/user");
+let isLoggedIn = false;
 
 // Aquí va a ir las cosas de bcrypt
 
@@ -34,7 +35,10 @@ authRouter.post("/signup", (req, res, next) => {
         // 5. Create new user in DB, saving the encrypted password
         User.create({ username, password })
           .then((user) => {
-            res.redirect("/");
+            isLoggedIn = true;
+            user.password = "****";
+            req.session.currentUser = user;
+            res.redirect("/challenge");
           })
           .catch((err) => {
             res.render("auth-views/signup-form", {
@@ -80,6 +84,7 @@ authRouter.post("/login", (req, res, next) => {
             errorMessage: "Wrong password",
           });
         } else {
+          isLoggedIn = true;
           user.password = "****";
           req.session.currentUser = user;
 
@@ -88,6 +93,17 @@ authRouter.post("/login", (req, res, next) => {
       }
     })
     .catch((err) => console.log(err));
+});
+
+// POST '/auth/logout'
+authRouter.post("/logout", (req, res, next) => {
+  if (isLoggedIn) req.session.destroy();
+  res
+    .status(204) //  No Content
+    .send()
+    .then(() => {
+      res.redirect("/");
+    });
 });
 
 module.exports = authRouter;
