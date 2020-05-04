@@ -1,0 +1,26 @@
+<div>
+    <h1>{{challenge.name}}</h1>
+
+    <img src="{{challenge.image}}" alt="">
+
+    <p>{{challenge.description}}</p>
+
+</div>
+
+{{#unless challengeIsTaken }}
+
+<form action="/challenge/{{challenge._id}}/accept" method="post">
+    <button type="submit">Take it!</button>
+</form>
+
+{{/unless}}
+
+<form action="" method="post">
+    <button type="submit">Edit your challenge</button>
+
+</form>
+
+<form action="" method="post">
+    <button type="submit">Delete your challenge</button>
+
+</form>

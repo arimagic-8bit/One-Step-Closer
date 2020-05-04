@@ -12,13 +12,13 @@
 
     {{#if challengeIsTaken}}
 
-    <form action="/challenge/{{challenge._id}}/completed" method="post">
+    <form action="/users/{{challenge._id}}/completed" method="post">
 
         <button type="submit">Complete</button>
 
     </form>
 
-    <form action="/challenge/{{challenge._id}}/leave" method="post">
+    <form action="/users/{{challenge._id}}/leave" method="post">
 
         <button type="submit">Give up challenge</button>
 

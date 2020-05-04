@@ -1,4 +1,3 @@
-
 <div>
     <a href="/users/actual">Accepted</a>
     <a href="/users/completed">Completed</a>
@@ -9,11 +8,13 @@
 
     {{#each user}}
 
-        {{#each createdChallenges}}
+    {{#each createdChallenges}}
 
+    <a href="/users/created/{{_id}}/details">
         <h1>{{name}}</h1>
+    </a>
 
-        {{/each}}
+    {{/each}}
 
     {{/each}}
 </div>

@@ -33,12 +33,12 @@ challengeRouter.get("/:id", (req, res, next) => {
   const currentUserId = req.session.currentUser._id;
 
   let promise1 = Challenge.findById(challengeTypeId)
-    .then(challenge => challenge)
-    .catch(err => console.log(err));
+    .then((challenge) => challenge)
+    .catch((err) => console.log(err));
 
   let promise2 = User.findById(currentUserId)
-    .then(user => user)
-    .catch(err => console.log(err));
+    .then((user) => user)
+    .catch((err) => console.log(err));
 
   Promise.all([promise1, promise2])
     .then((results) => {
@@ -55,7 +55,7 @@ challengeRouter.get("/:id", (req, res, next) => {
         challengeIsTaken,
       });
     })
-    .catch(err => next(err));
+    .catch((err) => next(err));
 });
 
 challengeRouter.post("/:id/accept", (req, res, next) => {
@@ -63,12 +63,12 @@ challengeRouter.post("/:id/accept", (req, res, next) => {
   // the oterway is to deconstr. => const {id} = req.params
   // arriba estamos guardando la id del challenge
 
-  const currentUser = req.session.currentUser; // guardamos el id del usuario de la sesión
+  const currentUser = req.session.currentUser._id; // guardamos el id del usuario de la sesión
   User.update({ _id: currentUser }, { $push: { actualChallenges: id } }) //return a promise
     .then((aceptedChallenge) => {
       res.redirect("/users/actual");
     })
-    .catch(err => next(err));
+    .catch((err) => next(err));
 });
 
 challengeRouter.post("/create", function (req, res, next) {
