@@ -71,27 +71,27 @@ usersRouter.get("/created/:id/details", function (req, res) {
 usersRouter.get("/:id/edit", (req, res, next) => {
   const currentUserID = req.session.currentUser._id;
   const challengeId = req.params.id;
-
+  
   Challenge.findById(challengeId)
     .then((challenge) => {
-      console.log("THISSSS", challenge);
       res.render("user-views/editChallenge", { challenge });
     })
     .catch((err) => next(err));
 });
 
 
-// usersRouter.post("/:id", (req, res, next) => {
-//   const { name, occupation, catchPhrase } = req.body;
-//   const celebrityId = req.params.id;
-
-//   Celebrity.update({_id: celebrityId}, { name, occupation, catchPhrase })
-//     .then((updatedCeleb) => {
-//       console.log("HERE", updatedCeleb);
-//       res.redirect("/celebrities");
-//     })
-//     .catch((err) => next(err));
-// });
+usersRouter.post("/:id/edit", (req, res, next) => {
+  const currentUserID = req.session.currentUser._id;
+  const challengeId = req.params.id;
+  const { name, image, description } = req.body;
+  console.log("EOOOOOOOO")
+  Challenge.update({_id: challengeId}, { name, image, description })
+    .then((updatedChallenge) => {
+      console.log("HERE", updatedChallenge);
+      res.redirect("/users/created");
+    })
+    .catch((err) => next(err));
+});
 
 
 usersRouter.post("/:id/completed", function (req, res, next) {
@@ -124,5 +124,21 @@ usersRouter.post("/:id/leave", function (req, res, next) {
     })
     .catch((err) => console.log(err));
 });
+
+
+usersRouter.post("/:id/delete", (req, res, next) => {
+  
+  const challengeId = req.params.id;
+  
+  Challenge.findByIdAndRemove(challengeId) //return a promise
+    .then((removedChallenge) => {
+      console.log(removedChallenge);
+      res.redirect("/users/created");
+    })
+    .catch((err) => console.log(err));
+});
+
+
+
 
 module.exports = usersRouter;

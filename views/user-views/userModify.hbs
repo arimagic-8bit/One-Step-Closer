@@ -15,12 +15,13 @@
 
 {{/unless}}
 
-<form action="" method="post">
+<a href="/users/{{challenge._id}}/edit">
+
     <button type="submit">Edit your challenge</button>
 
-</form>
+</a>
 
-<form action="" method="post">
+<form action="/users/{{challenge._id}}/delete" method="post">
     <button type="submit">Delete your challenge</button>
 
 </form>
