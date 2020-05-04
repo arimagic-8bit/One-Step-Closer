@@ -25,18 +25,37 @@ challengeRouter.get("/list/:type", (req, res, next) => {
     .then((challenge) => {
       res.render("challenge-views/type", { challenge, challengeType });
     })
-    .catch((err) => next(err));
+    .catch(err => next(err));
 });
 
 challengeRouter.get("/:id", (req, res, next) => {
   const challengeTypeId = req.params.id;
+  const currentUserId = req.session.currentUser._id;
 
-  Challenge.findById(challengeTypeId)
-    .then((challengeId) => {
-      console.log(challengeId);
-      res.render("challenge-views/challengeDetail", { challengeId });
+  let promise1 = Challenge.findById(challengeTypeId)
+    .then(challenge => challenge)
+    .catch(err => console.log(err));
+
+  let promise2 = User.findById(currentUserId)
+    .then(user => user)
+    .catch(err => console.log(err));
+
+  Promise.all([promise1, promise2])
+    .then((results) => {
+      let challenge = results[0];
+      let user = results[1];
+      let challengeIsTaken = false;
+
+      if (user.actualChallenges.includes(challenge._id)) {
+        challengeIsTaken = true;
+        console.log(challengeIsTaken);
+      }
+      res.render("challenge-views/challengeDetail", {
+        challenge,
+        challengeIsTaken,
+      });
     })
-    .catch((err) => next(err));
+    .catch(err => next(err));
 });
 
 challengeRouter.post("/:id/accept", (req, res, next) => {
@@ -49,28 +68,28 @@ challengeRouter.post("/:id/accept", (req, res, next) => {
     .then((aceptedChallenge) => {
       res.redirect("/users/actual");
     })
-    .catch((err) => next(err));
+    .catch(err => next(err));
 });
 
 challengeRouter.post("/create", function (req, res, next) {
-  const { type, name, description, image, author } = req.body;
-  const currentUser = req.session.currentUser;
+  const { type, name, description, image } = req.body;
+  const currentUserId = req.session.currentUser._id;
   const newChallenge = new Challenge({
     type,
     name,
     description,
     image,
-    author,
+    author: currentUserId,
   });
   newChallenge
     .save()
     .then(() => {
       const newChallengeId = newChallenge._id;
       User.update(
-        { _id: currentUser },
+        { _id: currentUserId },
         { $push: { createdChallenges: newChallengeId } }
       ).then(() => {
-        res.redirect("/users/create");
+        res.redirect("/users/created");
       });
     })
     .catch((err) => console.log(err));

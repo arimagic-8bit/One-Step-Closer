@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Challenge = mongoose.model("Challenge");
+//const Challenge = mongoose.model("Challenge");
 
 const userSchema = Schema({
   username: {
@@ -18,9 +18,12 @@ const userSchema = Schema({
       ref: "Challenge",
     },
   ],
-  createdChallenges: {
-    type: [String],
-  },
+  createdChallenges: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Challenge",
+    },
+  ],
   completedChallenges: [
     {
       type: Schema.Types.ObjectId,

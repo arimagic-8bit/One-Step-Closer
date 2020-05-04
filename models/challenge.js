@@ -25,7 +25,10 @@ const challengeSchema = Schema({
     type: String,
     required: true,
   },
-  author: String,
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   usersDoingSameChallenges: [String],
   usersCompletedChallenges: [String],
 });

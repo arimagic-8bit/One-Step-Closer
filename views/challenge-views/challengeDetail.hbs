@@ -1,14 +1,37 @@
 <div>
 
 
-    <h3>{{challengeId.name}}</h3>
-    <img src='{{challengeId.image}}' alt=" Challenge Image">
-    <p>{{challengeId.description}}</p>
+    <h3>{{challenge.name}}</h3>
+    <img src='{{challenge.image}}' alt=" Challenge Image">
+    <p>{{challenge.description}}</p>
 
 </div>
 
-<form action="/challenge/{{challengeId._id}}/accept" method="post">
+<div>
 
-    <button type="submit">Take it!</button>
 
-</form>
+    {{#if challengeIsTaken}}
+
+    <form action="/challenge/{{challenge._id}}/completed" method="post">
+
+        <button type="submit">Complete</button>
+
+    </form>
+
+    <form action="/challenge/{{challenge._id}}/leave" method="post">
+
+        <button type="submit">Give up challenge</button>
+
+    </form>
+
+    {{else}}
+
+    <form action="/challenge/{{challenge._id}}/accept" method="post">
+
+        <button type="submit">Take it!</button>
+
+    </form>
+
+    {{/if}}
+
+</div>
