@@ -46,9 +46,16 @@ challengeRouter.get("/:id", (req, res, next) => {
   Promise.all([promise1, promise2])
     .then((results) => {
       let challenge = results[0];
+      console.log(challenge);
       let user = results[1];
       let challengeIsTaken = false;
-      let author = challenge.author.username;
+      let author;
+
+      if (challenge.author) {
+        author = challenge.author.username;
+        console.log(author);
+      }
+
       if (user.actualChallenges.includes(challenge._id)) {
         challengeIsTaken = true;
       }
