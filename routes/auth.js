@@ -1,9 +1,8 @@
 const express = require("express");
 const authRouter = express.Router();
 const User = require("./../models/user");
-let isLoggedIn = false;
-
-// Aquí va a ir las cosas de bcrypt
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 // SIGNUP
 
@@ -29,13 +28,12 @@ authRouter.post("/signup", (req, res, next) => {
         return;
       } else {
         // 4. Generate salts and encrypt the password
-        //const salt = bcrypt.genSaltSync(saltRounds);
-        //const hashedPassword = bcrypt.hashSync(password, salt);
+        const salt = bcrypt.genSaltSync(saltRounds);
+        const hashedPassword = bcrypt.hashSync(password, salt);
 
         // 5. Create new user in DB, saving the encrypted password
-        User.create({ username, password })
+        User.create({ username, password: hashedPassword })
           .then((user) => {
-            isLoggedIn = true;
             user.password = "****";
             req.session.currentUser = user;
             res.redirect("/challenge");
@@ -76,15 +74,14 @@ authRouter.post("/login", (req, res, next) => {
           errorMessage: "Input invalid",
         });
       } else {
-        //const encryptedPassword = user.password;
-        //const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
+        const encryptedPassword = user.password;
+        const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
 
         if (!password) {
           res.render("auth-views/login-form", {
             errorMessage: "Wrong password",
           });
         } else {
-          isLoggedIn = true;
           user.password = "****";
           req.session.currentUser = user;
 
@@ -96,14 +93,16 @@ authRouter.post("/login", (req, res, next) => {
 });
 
 // POST '/auth/logout'
-authRouter.post("/logout", (req, res, next) => {
-  if (isLoggedIn) req.session.destroy();
-  res
-    .status(204) //  No Content
-    .send()
-    .then(() => {
-      res.redirect("/");
-    });
+authRouter.get("/logout", (req, res) => {
+  // We remove/destroy the session record in the database
+  console.log("EOOOO");
+  req.session.destroy((err) => {
+    if (err) {
+      res.render("error", { message: "Something went wrong! Yikes!" });
+    }
+    // Redirect to the page (we choose - home page)
+    res.redirect("/");
+  });
 });
 
 module.exports = authRouter;
