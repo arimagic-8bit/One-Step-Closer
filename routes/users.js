@@ -4,6 +4,8 @@ const usersRouter = express.Router();
 const Challenge = require("./../models/challenge");
 const User = require("./../models/user");
 
+const parser = require("./../config/cloudinary");
+
 usersRouter.get("/actual", function (req, res) {
   const currentUserID = req.session.currentUser;
   const userNow = User.findById(currentUserID);
@@ -65,13 +67,12 @@ usersRouter.get("/created/:id/details", function (req, res) {
       });
     })
     .catch((err) => next(err));
-  });
-
+});
 
 usersRouter.get("/:id/edit", (req, res, next) => {
   const currentUserID = req.session.currentUser._id;
   const challengeId = req.params.id;
-  
+
   Challenge.findById(challengeId)
     .then((challenge) => {
       res.render("user-views/editChallenge", { challenge });
@@ -79,20 +80,23 @@ usersRouter.get("/:id/edit", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-
-usersRouter.post("/:id/edit", (req, res, next) => {
+usersRouter.post("/:id/edit", parser.single("image"), (req, res, next) => {
   const currentUserID = req.session.currentUser._id;
   const challengeId = req.params.id;
-  const { name, image, description } = req.body;
-  console.log("EOOOOOOOO")
-  Challenge.update({_id: challengeId}, { name, image, description })
-    .then((updatedChallenge) => {
-      console.log("HERE", updatedChallenge);
+  const previousUserImg;
+
+  Challenge.findById(challengeId)
+  .then((challenge) => {
+    previousUserImg = challenge.image;
+    const imgUserUrl = req.file ? req.file.secure_url : previousUserImg;
+    const { name, description } = req.body;
+    return Challenge.update({ _id: challengeId }, { name, image: imgUserUrl, description })
+  })
+  .then(() => {   
       res.redirect("/users/created");
     })
     .catch((err) => next(err));
 });
-
 
 usersRouter.post("/:id/completed", function (req, res, next) {
   const challengeId = req.params.id;
@@ -125,11 +129,9 @@ usersRouter.post("/:id/leave", function (req, res, next) {
     .catch((err) => console.log(err));
 });
 
-
 usersRouter.post("/:id/delete", (req, res, next) => {
-  
   const challengeId = req.params.id;
-  
+
   Challenge.findByIdAndRemove(challengeId) //return a promise
     .then((removedChallenge) => {
       console.log(removedChallenge);
@@ -137,8 +139,5 @@ usersRouter.post("/:id/delete", (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
-
-
-
 
 module.exports = usersRouter;
