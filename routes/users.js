@@ -83,16 +83,20 @@ usersRouter.get("/:id/edit", (req, res, next) => {
 usersRouter.post("/:id/edit", parser.single("image"), (req, res, next) => {
   const currentUserID = req.session.currentUser._id;
   const challengeId = req.params.id;
-  const previousUserImg;
+  let previousUserImg;
 
   Challenge.findById(challengeId)
-  .then((challenge) => {
-    previousUserImg = challenge.image;
-    const imgUserUrl = req.file ? req.file.secure_url : previousUserImg;
-    const { name, description } = req.body;
-    return Challenge.update({ _id: challengeId }, { name, image: imgUserUrl, description })
-  })
-  .then(() => {   
+    .then((challenge) => {
+      previousUserImg = challenge.image;
+      const imgUserUrl = req.file ? req.file.secure_url : previousUserImg;
+      console.log(req.file);
+      const { name, description } = req.body;
+      return Challenge.update(
+        { _id: challengeId },
+        { name, image: imgUserUrl, description }
+      );
+    })
+    .then(() => {
       res.redirect("/users/created");
     })
     .catch((err) => next(err));
