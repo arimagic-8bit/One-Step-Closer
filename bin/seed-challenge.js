@@ -152,7 +152,7 @@ mongoose
         console.log("challengesCollection", challengesCollection);
       })
       .catch((err) => {
-        console.log("error", error);
+        console.log("error", err);
       });
   })
   .catch((err) => {
