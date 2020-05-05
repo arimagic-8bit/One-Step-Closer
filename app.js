@@ -24,7 +24,7 @@ const challengeRouter = require("./routes/challenge");
 // MONGOOSE CONNECTION
 
 mongoose
-  .connect(`mongodb://localhost:27017/${process.env.DB_NAME}`, {
+  .connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -59,7 +59,7 @@ app.locals.title = "One Step Closer";
 
 app.use(
   session({
-    secret: "esternocleidomastoideo",
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: false,
     store: new MongoStore({
