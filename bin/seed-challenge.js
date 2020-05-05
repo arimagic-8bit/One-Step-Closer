@@ -134,7 +134,7 @@ const challenges = [
 ];
 
 mongoose
-  .connect(pocess.env.MONGODB_URI, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
