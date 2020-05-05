@@ -5,6 +5,8 @@ const Challenge = require("./../models/challenge");
 
 const User = require("./../models/user");
 
+const parser = require("./../config/cloudinary");
+
 // MAIN
 
 challengeRouter.get("/", (req, res) => {
@@ -72,14 +74,20 @@ challengeRouter.post("/:id/accept", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-challengeRouter.post("/create", function (req, res, next) {
-  const { type, name, description, image } = req.body;
+challengeRouter.post("/create", parser.single("image"), function (
+  req,
+  res,
+  next
+) {
+  const { type, name, description } = req.body;
   const currentUserId = req.session.currentUser._id;
+  const image_url = req.file.secure_url;
+  console.log(req.file);
   const newChallenge = new Challenge({
     type,
     name,
     description,
-    image,
+    image: image_url,
     author: currentUserId,
   });
   newChallenge
