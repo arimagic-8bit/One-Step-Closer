@@ -8,11 +8,16 @@
 
     {{#each user}}
 
-        {{#each actualChallenges}}
+    {{#each actualChallenges}}
 
+    <a href="/challenge/{{_id}}">
         <h1>{{name}}</h1>
 
-        {{/each}}
+    </a>
+
+
+
+    {{/each}}
 
     {{/each}}
 </div>

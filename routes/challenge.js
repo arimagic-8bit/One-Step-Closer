@@ -25,7 +25,7 @@ challengeRouter.get("/list/:type", (req, res, next) => {
     .then((challenge) => {
       res.render("challenge-views/type", { challenge, challengeType });
     })
-    .catch(err => next(err));
+    .catch((err) => next(err));
 });
 
 challengeRouter.get("/:id", (req, res, next) => {
@@ -48,7 +48,6 @@ challengeRouter.get("/:id", (req, res, next) => {
 
       if (user.actualChallenges.includes(challenge._id)) {
         challengeIsTaken = true;
-        console.log(challengeIsTaken);
       }
       res.render("challenge-views/challengeDetail", {
         challenge,
