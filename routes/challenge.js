@@ -33,6 +33,7 @@ challengeRouter.get("/:id", (req, res, next) => {
   const currentUserId = req.session.currentUser._id;
 
   let promise1 = Challenge.findById(challengeTypeId)
+    .populate("author")
     .then((challenge) => challenge)
     .catch((err) => console.log(err));
 
@@ -45,13 +46,14 @@ challengeRouter.get("/:id", (req, res, next) => {
       let challenge = results[0];
       let user = results[1];
       let challengeIsTaken = false;
-
+      let author = challenge.author.username;
       if (user.actualChallenges.includes(challenge._id)) {
         challengeIsTaken = true;
       }
       res.render("challenge-views/challengeDetail", {
         challenge,
         challengeIsTaken,
+        author,
       });
     })
     .catch((err) => next(err));
