@@ -1,29 +1,27 @@
 <p class="text">Here you can see the challenges you <br>accepted</p>
 
-<divc class="scroll">
+<div class="challenge-container">
 
     {{#each user}}
 
-    <div class="challenge-container">
 
-        {{#each createdChallenges}}
-
-
-        <a class="challenge-item" href="/users/created/{{_id}}/details">
-            <h1>{{name}}</h1>
-        </a>
+    {{#each createdChallenges}}
 
 
-        {{/each}}
+    <a class="challenge-item" href="/users/created/{{_id}}/details">
+        <h1>{{name}}</h1>
+    </a>
 
-    </div>
 
     {{/each}}
 
-    </div>
 
-    <div class="nav">
-        <a href="/users/actual">Accepted</a>
-        <a href="/users/completed">Completed</a>
-        <a href="/users/created">Created</a>
-    </div>
+    {{/each}}
+
+</div>
+
+<div class="nav">
+    <a class="other" href="/users/actual">Accepted</a>
+    <a class="other" href="/users/completed">Completed</a>
+    <a class="actual" href="/users/created">Created</a>
+</div>

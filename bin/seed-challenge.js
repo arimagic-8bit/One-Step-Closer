@@ -73,7 +73,7 @@ const challenges = [
   },
   {
     type: "nutrition",
-    name: "Responsive Millenial",
+    name: "Responsible Millenial",
     image:
       "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description:
@@ -116,6 +116,65 @@ const challenges = [
       "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
     description:
       "Shut down computers and monitors when not in use during one week",
+    usersDoingSameChallenges: [],
+    usersCompletedChallenges: [],
+  },
+  {
+    type: "transportation",
+    name: "Public Transport",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588787973/One%20Step%20Closer%20images/bicycle_mumbvm.png",
+    description:
+      "Try not to driving to work. Hop on a bus, metro or train for a week",
+    usersDoingSameChallenges: [],
+    usersCompletedChallenges: [],
+  },
+  {
+    type: "transportation",
+    name: "Carpool",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588787973/One%20Step%20Closer%20images/bicycle_mumbvm.png",
+    description: "Try carpooling during one week to go to work",
+    usersDoingSameChallenges: [],
+    usersCompletedChallenges: [],
+  },
+  {
+    type: "transportation",
+    name: "Cycle To Work",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588787973/One%20Step%20Closer%20images/bicycle_mumbvm.png",
+    description:
+      "Reduce greenhouse gas emissions and increase your fitness levels cycling to work during one week",
+    usersDoingSameChallenges: [],
+    usersCompletedChallenges: [],
+  },
+  {
+    type: "responsible consumption",
+    name: "Purchase local food",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
+    description:
+      "Buy local and seasonal foods during 30 days to reduce your carbon footprint",
+    usersDoingSameChallenges: [],
+    usersCompletedChallenges: [],
+  },
+  {
+    type: "responsible consumption",
+    name: "Grow your own produce",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
+    description:
+      "Try growing your own produce in a community garden in your backyard or even in your balcony!",
+    usersDoingSameChallenges: [],
+    usersCompletedChallenges: [],
+  },
+  {
+    type: "responsible consumption",
+    name: "Shop Smart",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
+    description:
+      "Avoid buying more food than you need. Try making a list of items that you need to buy and stick to that list during 14 days",
     usersDoingSameChallenges: [],
     usersCompletedChallenges: [],
   },

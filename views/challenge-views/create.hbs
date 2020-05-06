@@ -1,17 +1,25 @@
+<h2 class="create-challenge">Create a <br><span class="green">challenge</span>!</h2>
+
 <form id="create" action="/challenge/create" method="post" enctype="multipart/form-data">
 
-    <label for=''>Title</label>
-    <input type='text' name='name'>
+    <div class="title">
+        <label for=''>Title</label>
+        <input type='text' name='name'>
+    </div>
 
-    <select name="type" id="type">
-        <option value="waste management">Waste Management</option>
-        <option value="water">Water</option>
-        <option value="nutrition">Nutrition</option>
-        <option value="energy">Energy</option>
-    </select>
+    <div class="type">
+        <label for="">Type</label>
+        <select name="type" id="type">
+            <option value="waste management">Waste Management</option>
+            <option value="water">Water</option>
+            <option value="nutrition">Nutrition</option>
+            <option value="energy">Energy</option>
+        </select>
+    </div>
+
 
     <label for="">Description</label>
-    <input type="text" name="description">
+    <input class="description" type="text" name="description">
 
     <input type="file" id="myFile" name="image">
 
