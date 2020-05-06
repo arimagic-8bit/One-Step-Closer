@@ -1,8 +1,8 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/users/actual">Private area</a>
-  <a href="#">Badges collection</a>
-  <a href="/auth/logout">Logout</a>
+  <a href="/users/actual" class="nav-area">Private area</a>
+  <a href="#" class="nav-area">Badges collection</a>
+  <a href="/auth/logout" class="nav-area">Logout</a>
 
 </div>
 
@@ -34,7 +34,7 @@
 
 
 <div class="container-fluid">
-  <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+  <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="false">
     <div class="carousel-inner row w-100 mx-auto" role="listbox">
       <div class="carousel-item col-md-3 active">
         <a href="/challenge/list/water"><img class="img-fluid mx-auto d-block"
@@ -43,21 +43,23 @@
       </div>
 
       <div class="carousel-item col-md-3">
-        <a href="/challenge/list/energy"></a><img class="img-fluid mx-auto d-block"
-          src="https://res.cloudinary.com/dywatr6gy/image/upload/v1588762542/One%20Step%20Closer%20images/electricity_wrqc81.png"
-          alt="...">ENERGY</a>
+        <a href="/challenge/list/energy"><img class="img-fluid mx-auto d-block"
+            src="https://res.cloudinary.com/dywatr6gy/image/upload/v1588762542/One%20Step%20Closer%20images/electricity_wrqc81.png"
+            alt="energy challenge icon">ENERGY</a>
       </div>
 
       <div class="carousel-item col-md-3">
         <a href="/challenge/list/waste management"><img class="img-fluid mx-auto d-block"
             src="https://res.cloudinary.com/dywatr6gy/image/upload/v1588761181/One%20Step%20Closer%20images/waste_q46xxp.png"
-            alt="...">WASTE MANAGEMENT</a>
+            alt="waste challenge icon">WASTE</a>
       </div>
 
       <div class="carousel-item col-md-3">
-        <a href="/challenge/list/nutrition"><img class="img-fluid mx-auto d-block"
+        <a href="/challenge/list/nutrition">
+          <img class="img-fluid mx-auto d-block"
             src="https://res.cloudinary.com/dywatr6gy/image/upload/v1588704280/One%20Step%20Closer%20images/comida-y-restaurante_urmiuu.png"
-            alt="...">NUTRITION</a>
+            alt="nutrition challenge icon">NUTRITION
+        </a>
       </div>
 
     </div>
@@ -66,7 +68,7 @@
       <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-      <i class="fa fa-chevron-right fa-lg text-muted"></i>
+      <i class="fa fa-chevron-right fa-lg text-muted flecha"></i>
       <span class="sr-only">Next</span>
     </a>
   </div>
@@ -75,9 +77,9 @@
 <script>
   $('#carouselExample').on('slide.bs.carousel', function (e) {
 
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 3;
+    var $e = $(e.relatedTarget); //returns which element being entered or exited on mouse movement.
+    var idx = $e.index(); //Search for a given element from among the matched elements (the ones clicked)
+    var itemsPerSlide = 3; // slides shown in bigger screen
     var totalItems = $('.carousel-item').length;
 
     if (idx >= totalItems - (itemsPerSlide - 1)) {

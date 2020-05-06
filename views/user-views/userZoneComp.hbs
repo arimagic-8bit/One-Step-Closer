@@ -1,18 +1,24 @@
-<div>
-    <a href="/users/actual">Accepted</a>
-    <a href="/users/completed">Completed</a>
-    <a href="/users/created">Created</a>
-</div>
+<p class="text-green">Great work!</p>
+<br>
+<p class="text">Thanks to you we are one step closer<br> to save the world</p>
+
+
 
 <div>
 
     {{#each user}}
 
-        {{#each completedChallenges}}
+    {{#each completedChallenges}}
 
-        <h1>{{name}}</h1>
-
-        {{/each}}
+    <h1>{{name}}</h1>
 
     {{/each}}
+
+    {{/each}}
+</div>
+
+<div>
+    <a href="/users/actual">Accepted</a>
+    <a href="/users/completed">Completed</a>
+    <a href="/users/created">Created</a>
 </div>
