@@ -1,20 +1,31 @@
-<div>
-    <a href="/users/actual">Accepted</a>
-    <a href="/users/completed">Completed</a>
-    <a href="/users/created">Created</a>
-</div>
+<p class="text">Here you can see the challenges you <br>accepted</p>
 
 <div>
 
     {{#each user}}
 
-    {{#each createdChallenges}}
+    <div class="challenge-container">
 
-    <a href="/users/created/{{_id}}/details">
-        <h1>{{name}}</h1>
-    </a>
+        {{#each createdChallenges}}
+
+
+        <div class="challenge-item">
+            <a href="/users/created/{{_id}}/details">
+                <h1>{{name}}</h1>
+            </a>
+        </div>
+
+
+        {{/each}}
+
+    </div>
 
     {{/each}}
 
-    {{/each}}
+</div>
+
+<div>
+    <a href="/users/actual">Accepted</a>
+    <a href="/users/completed">Completed</a>
+    <a href="/users/created">Created</a>
 </div>
