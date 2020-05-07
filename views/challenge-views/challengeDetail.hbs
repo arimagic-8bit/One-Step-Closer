@@ -3,9 +3,9 @@
 
     <h3 class="{{challenge.type}}">{{challenge.name}}</h3>
     <img src='{{challenge.image}}' alt=" Challenge Image">
-    <p>{{challenge.description}}</p>
+    <p class="description-detail">{{challenge.description}}</p>
     {{#if author}}
-    <p>This challenge was created by {{author}}</p>
+    <p class="author">This challenge was created by <br><span>{{author}}</span></p>
     {{/if}}
 
 </div>
@@ -15,13 +15,13 @@
 
     {{#if challengeIsTaken}}
 
-    <form action="/users/{{challenge._id}}/completed" method="post">
+    <form class="take-it" action="/users/{{challenge._id}}/completed" method="post">
 
         <button type="submit">Complete</button>
 
     </form>
 
-    <form action="/users/{{challenge._id}}/leave" method="post">
+    <form class="leave" action="/users/{{challenge._id}}/leave" method="post">
 
         <button type="submit">Give up challenge</button>
 
@@ -29,7 +29,9 @@
 
     {{else}}
 
-    <form action="/challenge/{{challenge._id}}/accept" method="post">
+    <form class="take-it" action="/challenge/{{challenge._id}}/accept" method="post">
+
+        <p>Are you ready?</p>
 
         <button type="submit">Take it!</button>
 

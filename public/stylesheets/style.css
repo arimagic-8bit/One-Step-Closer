@@ -682,20 +682,27 @@ input {
 .waste h3,
 .nutrition h3,
 .transportation h3,
-h3.water {
+h3.water,
+h3.energy,
+h3.nutrition,
+h3.waste,
+h3.transportation,
+h3.consumption {
   color: black;
   font-family: "Roboto";
   font-size: 45px;
-  line-height: 35px;
+  line-height: 45px;
   text-align: center;
   margin-bottom: 35px;
-  padding-top: 23px;
-  height: 90px;
+  padding-top: 20px;
+  height: 130px;
   width: 481px;
   border-radius: 25px;
+  position: relative;
 }
 
-.energy h3 {
+.energy h3,
+h3.energy {
   background-color: #5dba54;
 }
 
@@ -704,31 +711,45 @@ h3.water {
   background-color: #54baba;
 }
 
-.nutrition h3 {
+.nutrition h3,
+h3.nutrition {
   background-color: #ea8b8b;
 }
 
-.waste h3 {
+.waste h3,
+h3.waste {
   background-color: rgb(207, 233, 103);
 }
 
-.transportation h3 {
+.transportation h3,
+h3.transportation {
   background-color: rgb(243, 102, 51);
 }
 
-.consumption h3 {
+.consumption h3,
+h3.consumption {
   background-color: rgb(47, 145, 47);
 }
 
 /* PRIVATE AREA */
 
 .text {
-  margin-top: 278px;
+  margin-top: 155px;
   margin-bottom: 74px;
   font-family: "Roboto";
-  font-size: 40px;
+  font-size: 50px;
   line-height: 45px;
   text-align: center;
+}
+
+.text-green {
+  margin-top: 278px;
+  font-family: "Roboto";
+  font-size: 50px;
+  line-height: 45px;
+  text-align: center;
+  color: #19a964;
+  font-weight: bold;
 }
 
 .challenge-container {
@@ -737,14 +758,10 @@ h3.water {
   flex-direction: column;
   align-items: center;
   overflow: scroll;
-  background-color: black;
 }
 
 .challenge-item {
-  width: 40%;
-  min-width: 700px;
   height: 200px;
-  background: #71d44e;
   border-radius: 8px;
   text-align: center;
   padding-top: 85px;
@@ -757,19 +774,18 @@ h3.water {
   font-weight: bold;
 }
 
-.challenge-item:hover,
-.challenge-item:focus {
-  color: white;
+.challenge-container a:active {
+  text-decoration: none;
 }
 
 .nav {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   margin-top: 900px;
+  justify-content: space-between;
   margin-bottom: 30px;
   text-align: center;
+  position: sticky;
 }
 
 .nav a {
@@ -783,6 +799,12 @@ h3.water {
   color: white;
   font-weight: bold;
 }
+
+.nav a:active {
+  color: white;
+  text-decoration: underline;
+}
+
 .other {
   background-color: #16bc6c;
 }
@@ -794,12 +816,11 @@ h3.water {
 /* DETAIL VIEW */
 
 .detail-container {
-  margin-top: 55px;
+  margin-top: 75px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-content: center;
-  text-align: center;
 }
 
 .detail-container img {
@@ -811,6 +832,85 @@ h3.water {
   align-self: center;
 }
 
-.detail-container button {
+.description-detail {
   align-self: center;
+  font-size: 45px;
+  font-family: "Roboto";
+  width: 80%;
+  margin-top: 70px;
+  line-height: 58px;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.author {
+  align-self: center;
+  font-size: 45px;
+  margin-top: 100px;
+  font-family: "Roboto";
+  text-align: center;
+  line-height: 58px;
+}
+
+.author span {
+  font-weight: bold;
+}
+
+.take-it {
+  margin-top: 103px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  font-family: "Roboto";
+}
+
+.take-it p {
+  align-self: center;
+  font-size: 45px;
+  margin-bottom: 80px;
+}
+
+.take-it button {
+  align-self: center;
+  font-size: 45px;
+  background: #16bc6c;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 350px;
+  height: 75px;
+  font-weight: bold;
+  color: white;
+}
+
+.leave {
+  margin-top: 103px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  font-family: "Roboto";
+}
+
+.leave p {
+  align-self: center;
+  font-size: 45px;
+  margin-bottom: 80px;
+}
+
+.leave button {
+  align-self: center;
+  font-size: 45px;
+  background: #d64141;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 350px;
+  height: 125px;
+  font-weight: bold;
+  color: white;
+}
+
+.leave button:active,
+.take-it button:active {
+  text-decoration-line: underline;
 }
