@@ -610,6 +610,21 @@ input {
   font-size: 55px;
 }
 
+.submit-changes {
+  background: #16bc6c;
+  color: white;
+  padding-top: 6px;
+  width: 291px;
+  height: 120px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Roboto";
+  line-height: 44px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 45px;
+}
+
 /*CHALLENGE BY TYPE*/
 
 .type-container {
@@ -966,14 +981,14 @@ h3.consumption {
   font-family: "Roboto";
 }
 
-#myModal .modal-title{
+#myModal .modal-title {
   font-weight: bold;
   color: red;
   margin-left: 200px;
   margin-top: 30px;
 }
 
-#myModal .close{
+#myModal .close {
   font-size: 50px;
 }
 
@@ -991,4 +1006,10 @@ h3.consumption {
   width: 180px;
   height: 100px;
   font-size: 50px;
+}
+
+.error-message {
+  font-size: 40px;
+  margin-top: 100px;
+  margin-left: 155px;
 }
