@@ -18,7 +18,7 @@ const challenges = [
     type: "waste",
     name: "No waste",
     image:
-      "https://image.freepik.com/free-photo/flat-lay-arrangement-zero-waste-lettering-with-copy-space_23-2148491132.jpg",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875035/One%20Step%20Closer%20images/waste_1_yciroq.png",
     description:
       "Go one week without creating any trash. None. Zero. Compost & Recycle your mantra",
     usersDoingSameChallenges: [],
@@ -36,7 +36,8 @@ const challenges = [
   {
     type: "water",
     name: "Catch the water",
-    image: "https://res.cloudinary.com/dywatr6gy/image/upload/v1588839990/One%20Step%20Closer%20images/bucket_n0jlks.png",
+    image:
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588839990/One%20Step%20Closer%20images/bucket_n0jlks.png",
     description:
       "Keep a bucket in the shower to catch water and use it to water the house plants.",
     usersDoingSameChallenges: [],
@@ -66,7 +67,7 @@ const challenges = [
     type: "nutrition",
     name: "Veggie week",
     image:
-      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875052/One%20Step%20Closer%20images/salad_hd1se5.png",
     description: "Try not to eat meat for a week in total",
     usersDoingSameChallenges: [],
     usersCompletedChallenges: [],
@@ -85,7 +86,7 @@ const challenges = [
     type: "nutrition",
     name: "30 days veggie",
     image:
-      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588840067/One%20Step%20Closer%20images/vegetarian_ik3s5e.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875072/One%20Step%20Closer%20images/pig_e52lge.png",
     description:
       "If you shift from a regular diet to 30 days vegan, you could save up to aprox 3 animals!",
     usersDoingSameChallenges: [],
@@ -95,7 +96,7 @@ const challenges = [
     type: "energy",
     name: "Close blinds",
     image:
-      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875162/One%20Step%20Closer%20images/blinds_hkkmrb.png",
     description: "Close blinds on sunny windows on hot days during one week",
     usersDoingSameChallenges: [],
     usersCompletedChallenges: [],
@@ -104,7 +105,7 @@ const challenges = [
     type: "energy",
     name: "Stairs",
     image:
-      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875099/One%20Step%20Closer%20images/stairs_cbem4i.png",
     description: "Use stairs instead of the elevator during 7 days",
     usersDoingSameChallenges: [],
     usersCompletedChallenges: [],
@@ -113,7 +114,7 @@ const challenges = [
     type: "energy",
     name: "Shut down devices",
     image:
-      "https://image.freepik.com/vector-gratis/di-no-bolsas-plastico-firmar-logo_10045-135.jpg",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875206/One%20Step%20Closer%20images/close_vaocoy.png",
     description:
       "Shut down computers and monitors when not in use during one week",
     usersDoingSameChallenges: [],
@@ -123,7 +124,7 @@ const challenges = [
     type: "transportation",
     name: "Public Transport",
     image:
-      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588787973/One%20Step%20Closer%20images/bicycle_mumbvm.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875189/One%20Step%20Closer%20images/train_yi6mam.png",
     description:
       "Try not to driving to work. Hop on a bus, metro or train for a week",
     usersDoingSameChallenges: [],
@@ -133,7 +134,7 @@ const challenges = [
     type: "transportation",
     name: "Carpool",
     image:
-      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588787973/One%20Step%20Closer%20images/bicycle_mumbvm.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875117/One%20Step%20Closer%20images/car-sharing_uf9gye.png",
     description: "Try carpooling during one week to go to work",
     usersDoingSameChallenges: [],
     usersCompletedChallenges: [],
@@ -142,7 +143,7 @@ const challenges = [
     type: "transportation",
     name: "Cycle To Work",
     image:
-      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588787973/One%20Step%20Closer%20images/bicycle_mumbvm.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588875140/One%20Step%20Closer%20images/bicycle_1_z2bped.png",
     description:
       "Reduce greenhouse gas emissions and increase your fitness levels cycling to work during one week",
     usersDoingSameChallenges: [],
@@ -152,7 +153,7 @@ const challenges = [
     type: "consumption",
     name: "Purchase local food",
     image:
-    "https://res.cloudinary.com/dywatr6gy/image/upload/v1588840100/One%20Step%20Closer%20images/farming_tojmrh.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588840100/One%20Step%20Closer%20images/farming_tojmrh.png",
     description:
       "Buy local and seasonal foods during 30 days to reduce your carbon footprint",
     usersDoingSameChallenges: [],
@@ -162,7 +163,7 @@ const challenges = [
     type: "consumption",
     name: "Grow your own produce",
     image:
-      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588874729/One%20Step%20Closer%20images/agriculture_vrkdox.png",
     description:
       "Try growing your own produce in a community garden in your backyard or even in your balcony!",
     usersDoingSameChallenges: [],
@@ -172,7 +173,7 @@ const challenges = [
     type: "consumption",
     name: "Shop Smart",
     image:
-      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
+      "https://res.cloudinary.com/dywatr6gy/image/upload/v1588874761/One%20Step%20Closer%20images/shopping-basket_dy3tlh.png",
     description:
       "Avoid buying more food than you need. Try making a list of items that you need to buy and stick to that list during 14 days",
     usersDoingSameChallenges: [],
