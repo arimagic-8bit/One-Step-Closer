@@ -1,25 +1,26 @@
 $(".center").slick({
   accessibility: true,
-  autoplay: true,
+  autoplay: false,
   centerMode: true,
-  centerPadding: "60px",
+  centerPadding: "0.5%",
   slidesToShow: 3,
+  focusOnSelect: true,
   responsive: [
     {
       breakpoint: 768,
       settings: {
-        arrows: false,
+        arrows: true,
         centerMode: true,
-        centerPadding: "40px",
+        centerPadding: "5%",
         slidesToShow: 3,
       },
     },
     {
       breakpoint: 480,
       settings: {
-        arrows: false,
+        arrows: true,
         centerMode: true,
-        centerPadding: "40px",
+        centerPadding: "100px",
         slidesToShow: 1,
       },
     },

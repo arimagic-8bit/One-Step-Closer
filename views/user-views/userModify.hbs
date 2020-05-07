@@ -21,41 +21,38 @@
 
 </a>
 
-<form action="/users/{{challenge._id}}/delete" method="post">
-    <!-- Button trigger modal -->
-    <button type="submit" class="btn btn-primary" data-toggle="modal" id="myBtn">
-        Delete your challenge
-    </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <h4 class="modal-title">Modal Header</h4>
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Woohoo, you're deleting this challenge! Are you sure?!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Delete</button>
-                </div>
+<!-- Button trigger modal -->
+<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Delete your challenge
+</button>
+
+<!-- Modal -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">WARNING</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>Are you sure do you want to delete?</p>
+            </div>
+
+            <!-- Modal footer -->
+
+            <div class="modal-footer">
+                <form action="/users/{{challenge._id}}/delete" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+
         </div>
     </div>
-
-</form>
-
-
-
-<script>
-    $(document).ready(function () {
-        $("#myBtn").click(function () {
-            $("#myModal").modal();
-        });
-    });
-</script>
+</div>

@@ -368,7 +368,7 @@ table {
 
 /* CAROUSEL */
 
-.myCarousel{
+.myCarousel {
   margin-top: 100px;
   text-align: center;
   font-size: 30px;
@@ -539,9 +539,10 @@ table {
   font-size: 20px;
 }
 
-#create input {
+#create input,
+textarea {
   width: 700px;
-  background: #f7f7f7;
+  background: #ecebeb;
   border: 1px solid #dcd1d1;
   box-sizing: border-box;
   margin-bottom: 30px;
@@ -551,17 +552,32 @@ table {
   height: 500px;
 }
 
-label,
+.file label,
 input {
   display: block;
 }
 
-label {
+.file label {
   margin-bottom: 20px;
 }
 
 .ready {
   margin-bottom: 20px;
+}
+
+.submit-create {
+  background: #16bc6c;
+  color: white;
+  padding-top: 6px;
+  width: 281px;
+  height: 86px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Roboto";
+  line-height: 34px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 55px;
 }
 
 /*CHALLENGE BY TYPE*/
@@ -689,3 +705,25 @@ label {
 .actual {
   background-color: #6dceb1;
 }
+
+.slick-next:before {
+  color: black !important;
+  font-size: 55px;
+  margin-left: -35px;
+}
+
+.slick-prev:before {
+  color: black !important;
+  font-size: 55px;
+  margin-right: -85px;
+}
+
+/* .slick-next {
+  font-size: 200px !important;
+  
+  right: 50px;
+}
+
+.slick-prev {
+  left: 50px !important;
+} */
