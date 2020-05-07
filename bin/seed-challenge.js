@@ -5,7 +5,7 @@ const Challenge = require("./../models/challenge");
 
 const challenges = [
   {
-    type: "waste-management",
+    type: "waste",
     name: "No Plastic Bag",
     image:
       "https://image.freepik.com/free-vector/plastic-bag-prohibited-crossed-out-bag-icon-no-plastic-brown-linen-eco-bag-with-sign-bring-your-own-care-about-environment_136277-224.jpg",
@@ -15,7 +15,7 @@ const challenges = [
     usersCompletedChallenges: [],
   },
   {
-    type: "waste-management",
+    type: "waste",
     name: "No waste",
     image:
       "https://image.freepik.com/free-photo/flat-lay-arrangement-zero-waste-lettering-with-copy-space_23-2148491132.jpg",
@@ -25,7 +25,7 @@ const challenges = [
     usersCompletedChallenges: [],
   },
   {
-    type: "waste-management",
+    type: "waste",
     name: "No foods plastic packed",
     image:
       "https://image.freepik.com/free-photo/plastic-free-fruit-veggies-movement-concept-hand-holding-piede-broccoli-with-plastic-packaging_78665-229.jpg",
@@ -149,7 +149,7 @@ const challenges = [
     usersCompletedChallenges: [],
   },
   {
-    type: "responsible-consumption",
+    type: "consumption",
     name: "Purchase local food",
     image:
       "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
@@ -159,7 +159,7 @@ const challenges = [
     usersCompletedChallenges: [],
   },
   {
-    type: "responsible-consumption",
+    type: "consumption",
     name: "Grow your own produce",
     image:
       "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",
@@ -169,7 +169,7 @@ const challenges = [
     usersCompletedChallenges: [],
   },
   {
-    type: "responsible-consumption",
+    type: "consumption",
     name: "Shop Smart",
     image:
       "https://res.cloudinary.com/dywatr6gy/image/upload/v1588789057/One%20Step%20Closer%20images/nature_rwkk2d.png",

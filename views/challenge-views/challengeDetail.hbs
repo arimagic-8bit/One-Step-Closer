@@ -1,12 +1,9 @@
-<div>
+<div class="detail-container">
 
 
-    <h3>{{challenge.name}}</h3>
-    <br>
+    <h3 class="{{challenge.type}}">{{challenge.name}}</h3>
     <img src='{{challenge.image}}' alt=" Challenge Image">
-    <br>
     <p>{{challenge.description}}</p>
-    <br>
     {{#if author}}
     <p>This challenge was created by {{author}}</p>
     {{/if}}

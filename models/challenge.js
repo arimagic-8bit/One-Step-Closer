@@ -7,9 +7,9 @@ const challengeSchema = Schema({
     enum: [
       "water",
       "energy",
-      "waste-management",
+      "waste",
       "nutrition",
-      "responsible-consumption",
+      "consumption",
       "transportation",
     ],
   },

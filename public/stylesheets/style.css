@@ -380,6 +380,12 @@ table {
   text-align: center;
   font-size: 30px;
 }
+
+.myCarousel a {
+  color: black;
+  font-family: "Roboto";
+}
+
 .myCarousel img {
   width: 300px;
 }
@@ -649,7 +655,11 @@ input {
 }
 
 .energy,
-.water {
+.water,
+.consumption,
+.waste,
+.nutrition,
+.transportation {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -658,14 +668,21 @@ input {
 
 .energy a,
 .water a,
-.consumption a {
+.consumption a,
+.waste a,
+.nutrition a,
+.transportation a {
   align-self: center;
   margin-top: 45px;
 }
 
 .energy h3,
 .water h3,
-.consumption h3 {
+.consumption h3,
+.waste h3,
+.nutrition h3,
+.transportation h3,
+h3.water {
   color: black;
   font-family: "Roboto";
   font-size: 45px;
@@ -682,12 +699,25 @@ input {
   background-color: #5dba54;
 }
 
-.water h3 {
+.water h3,
+h3.water {
+  background-color: #54baba;
+}
+
+.nutrition h3 {
+  background-color: #ea8b8b;
+}
+
+.waste h3 {
   background-color: rgb(207, 233, 103);
 }
 
+.transportation h3 {
+  background-color: rgb(243, 102, 51);
+}
+
 .consumption h3 {
-  background-color: #ea8b8b;
+  background-color: rgb(47, 145, 47);
 }
 
 /* PRIVATE AREA */
@@ -759,4 +789,28 @@ input {
 
 .actual {
   background-color: #6dceb1;
+}
+
+/* DETAIL VIEW */
+
+.detail-container {
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+.detail-container img {
+  width: 50%;
+  align-self: center;
+}
+
+.detail-container h3 {
+  align-self: center;
+}
+
+.detail-container button {
+  align-self: center;
 }

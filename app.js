@@ -46,6 +46,14 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 
+//Helper HBS
+hbs.registerHelper("ifeq", function (a, b, options) {
+  if (a === b) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 // Middleware Setup
 app.use(logger("dev"));
 app.use(express.json());
