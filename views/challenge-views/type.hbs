@@ -1,15 +1,22 @@
-<div class="{{challengeType}}">
+<div class="type-container">
 
-    <h2>You chose {{challengeType}} challenge</h2>
+    <h2>You chose <br> <span>{{challengeType}}</span> challenge</h2>
 
-    <img src="" alt="">
+    <img class="image-type"
+        src="https://res.cloudinary.com/dywatr6gy/image/upload/v1588840100/One%20Step%20Closer%20images/farming_tojmrh.png"
+        alt="water image">
 
-    <p>Text about something important</p>
+    <p class="facts">Text about something important</p>
+    <br>
+    <p class="choose-text">Choose you challenge</p>
 
-    {{#each challenge}}
+    <div class="{{challengeType}}">
+        {{#each challenge}}
 
-    <a href="/challenge/{{_id}}">
-        <h2>{{name}}</h2>
-    </a>
-    {{/each}}
+        <a href="/challenge/{{_id}}">
+            <h2>{{name}}</h2>
+        </a>
+        {{/each}}
+    </div>
+
 </div>

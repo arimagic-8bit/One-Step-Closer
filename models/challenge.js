@@ -9,8 +9,8 @@ const challengeSchema = Schema({
       "energy",
       "waste management",
       "nutrition",
-      "consume",
-      "other",
+      "responsible consumption",
+      "transportation"
     ],
   },
   name: {

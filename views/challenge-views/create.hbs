@@ -3,29 +3,33 @@
 <form id="create" action="/challenge/create" method="post" enctype="multipart/form-data">
 
     <div class="title">
-        <label for=''>Title</label>
+        <label for=''>Title:</label>
         <input type='text' name='name'>
     </div>
 
     <div class="type">
-        <label for="">Type</label>
-        <select name="type" id="type">
+        <label for="">Type:</label>
+        <select name="type" id="type-option">
             <option value="waste management">Waste Management</option>
             <option value="water">Water</option>
             <option value="nutrition">Nutrition</option>
             <option value="energy">Energy</option>
+            <option value="energy">Transport</option>
+            <option value="energy">Consume</option>
         </select>
     </div>
 
 
-    <label for="">Description</label>
+    <label for="">Description:</label>
     <input class="description" type="text" name="description">
 
-    <input type="file" id="myFile" name="image">
+    <label for="">Image:
+        <input class="myFile" type="file" id="myFile" name="image">
+    </label>
 
+    <p class="ready">Are you ready?</p>
 
-
-    <button type="submit">Create</button>
+        <button class="submit-create" type="submit">Create</button>
 
 </form>
 

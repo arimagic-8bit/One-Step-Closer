@@ -40,6 +40,7 @@ authRouter.post("/signup", (req, res, next) => {
           })
           .catch((err) => {
             res.render("auth-views/signup-form", {
+              currentUser,
               errorMessage: `Error during signup`,
             });
           });
