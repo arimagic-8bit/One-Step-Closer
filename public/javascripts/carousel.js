@@ -20,7 +20,7 @@ $(".center").slick({
       settings: {
         arrows: true,
         centerMode: true,
-        centerPadding: "100px",
+        centerPadding: "5%",
         slidesToShow: 1,
       },
     },

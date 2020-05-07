@@ -366,6 +366,13 @@ table {
   border: 2px solid #16bc6c;
 }
 
+.take {
+  font-size: 50px;
+  font-family: "Roboto";
+  line-height: 35px;
+  margin-top: 55px;
+}
+
 /* CAROUSEL */
 
 .myCarousel {
@@ -375,6 +382,23 @@ table {
 }
 .myCarousel img {
   width: 300px;
+}
+
+.slick-next:before {
+  color: black !important;
+  font-size: 55px;
+  margin-left: -85px;
+}
+
+.slick-prev {
+  z-index: 1;
+}
+
+.slick-prev:before {
+  color: black !important;
+  font-size: 55px;
+  margin-right: -95px;
+  z-index: 1;
 }
 
 .create-btn-container {
@@ -391,7 +415,7 @@ table {
   font-family: "Roboto";
   font-size: 35px;
   line-height: 21px;
-  margin-top: 250px;
+  margin-top: 170px;
   letter-spacing: 3px;
   line-height: 40px;
 }
@@ -601,6 +625,7 @@ input {
 
 .type-container span {
   color: #16bc6c;
+  font-weight: bold;
 }
 
 .facts {
@@ -623,16 +648,46 @@ input {
   margin-bottom: 58px;
 }
 
-.energy {
+.energy,
+.water {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
 }
 
-.energy h2 {
+.energy a,
+.water a,
+.consumption a {
+  align-self: center;
+  margin-top: 45px;
+}
+
+.energy h3,
+.water h3,
+.consumption h3 {
+  color: black;
+  font-family: "Roboto";
+  font-size: 45px;
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 35px;
+  padding-top: 23px;
+  height: 90px;
+  width: 481px;
+  border-radius: 25px;
+}
+
+.energy h3 {
   background-color: #5dba54;
-  color: white;
-  width: 281px;
-  height: 43px;
+}
+
+.water h3 {
+  background-color: rgb(207, 233, 103);
+}
+
+.consumption h3 {
+  background-color: #ea8b8b;
 }
 
 /* PRIVATE AREA */
@@ -705,25 +760,3 @@ input {
 .actual {
   background-color: #6dceb1;
 }
-
-.slick-next:before {
-  color: black !important;
-  font-size: 55px;
-  margin-left: -35px;
-}
-
-.slick-prev:before {
-  color: black !important;
-  font-size: 55px;
-  margin-right: -85px;
-}
-
-/* .slick-next {
-  font-size: 200px !important;
-  
-  right: 50px;
-}
-
-.slick-prev {
-  left: 50px !important;
-} */
