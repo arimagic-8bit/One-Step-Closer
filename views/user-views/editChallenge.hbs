@@ -1,7 +1,10 @@
-<form action="/users/{{challenge._id}}/edit" method="post" enctype="multipart/form-data">
+<form id= "create" action="/users/{{challenge._id}}/edit" method="post" enctype="multipart/form-data">
 
-    <label for="">Title</label>
-    <input type="text" name="name" value="{{challenge.name}}">
+    <div class="title">
+        <label for="">Title</label>
+        <input type="text" name="name" value="{{challenge.name}}">
+    </div>
+
 
     <label for="">Image</label>
     <input type="file" id="myFile" name="image" value="{{challenge.image}}">

@@ -1,29 +1,31 @@
-<div>
-    <h1>{{challenge.name}}</h1>
+<div class="detail-container">
+    <h3 class="{{challenge.type}} edited">{{challenge.name}}</h3>
 
     <img src="{{challenge.image}}" alt="">
 
-    <p>{{challenge.description}}</p>
+    <p class="description-detail">{{challenge.description}}</p>
 
 </div>
 
+
 {{#unless challengeIsTaken }}
 
-<form action="/challenge/{{challenge._id}}/accept" method="post">
+<form class="take-it" action="/challenge/{{challenge._id}}/accept" method="post">
     <button type="submit">Take it!</button>
 </form>
 
 {{/unless}}
 
-<a href="/users/{{challenge._id}}/edit">
+<a class="edit-btn" href="/users/{{challenge._id}}/edit">
 
     <button type="submit">Edit your challenge</button>
 
 </a>
 
 
+
 <!-- Button trigger modal -->
-<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+<button type="submit" class="leave-btn" data-toggle="modal" data-target="#myModal">
     Delete your challenge
 </button>
 

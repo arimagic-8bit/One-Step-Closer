@@ -4,18 +4,16 @@
 
 
 
-<div>
 
-    {{#each user}}
+{{#each user}}
 
-    {{#each completedChallenges}}
+{{#each completedChallenges}}
 
-    <h1>{{name}}</h1>
+<h3 class="{{type}} complete">{{name}}</h3>
 
-    {{/each}}
+{{/each}}
 
-    {{/each}}
-</div>
+{{/each}}
 
 
 <div class="nav">
