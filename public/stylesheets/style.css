@@ -132,7 +132,7 @@ table {
 /* LAYOUT */
 
 .btn-return {
-  position: relative;
+  position: fixed;
   left: 30px;
   top: 30px;
   width: 30px;
@@ -654,6 +654,9 @@ input {
   font-size: 40px;
   margin-bottom: 48px;
   font-family: "Roboto";
+  text-align: center;
+  width: 80%;
+  line-height: 50px;
 }
 
 .choose-text {
@@ -709,8 +712,8 @@ h3.consumption {
   line-height: 45px;
   text-align: center;
   margin-bottom: 35px;
-  padding-top: 20px;
-  height: 130px;
+  padding-top: 40px;
+  height: 140px;
   width: 481px;
   border-radius: 25px;
   position: relative;
@@ -800,12 +803,12 @@ h3.consumption {
 .nav {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  margin-top: 100px;
   justify-content: space-between;
   margin-bottom: 30px;
   text-align: center;
-  position: sticky;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .nav a {
@@ -862,6 +865,8 @@ h3.consumption {
   letter-spacing: 4px;
   text-align: center;
 }
+
+
 
 .author {
   align-self: center;
@@ -1010,6 +1015,7 @@ h3.consumption {
 
 .error-message {
   font-size: 40px;
-  margin-top: 100px;
-  margin-left: 155px;
+  bottom: 5px;
+  position: fixed;
+  font-weight: bold;
 }

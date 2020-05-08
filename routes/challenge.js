@@ -88,8 +88,10 @@ challengeRouter.post("/create", parser.single("image"), function (
 ) {
   const { type, name, description } = req.body;
   const currentUserId = req.session.currentUser._id;
+  if (!req.file) {
+    res.render("challenge-views/create", {errorMessage:"Don't forget to add an image!"})
+  }
   const image_url = req.file.secure_url;
-  console.log(req.file);
   const newChallenge = new Challenge({
     type,
     name,
