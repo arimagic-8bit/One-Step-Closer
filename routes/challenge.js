@@ -89,28 +89,31 @@ challengeRouter.post("/create", parser.single("image"), function (
   const { type, name, description } = req.body;
   const currentUserId = req.session.currentUser._id;
   if (!req.file) {
-    res.render("challenge-views/create", {errorMessage:"Don't forget to add an image!"})
+    res.render("challenge-views/create", {
+      errorMessage: "Don't forget to add an image!",
+    });
+  } else {
+    const image_url = req.file.secure_url;
+    const newChallenge = new Challenge({
+      type,
+      name,
+      description,
+      image: image_url,
+      author: currentUserId,
+    });
+    newChallenge
+      .save()
+      .then(() => {
+        const newChallengeId = newChallenge._id;
+        User.update(
+          { _id: currentUserId },
+          { $push: { createdChallenges: newChallengeId } }
+        ).then(() => {
+          res.redirect("/users/created");
+        });
+      })
+      .catch((err) => console.log(err));
   }
-  const image_url = req.file.secure_url;
-  const newChallenge = new Challenge({
-    type,
-    name,
-    description,
-    image: image_url,
-    author: currentUserId,
-  });
-  newChallenge
-    .save()
-    .then(() => {
-      const newChallengeId = newChallenge._id;
-      User.update(
-        { _id: currentUserId },
-        { $push: { createdChallenges: newChallengeId } }
-      ).then(() => {
-        res.redirect("/users/created");
-      });
-    })
-    .catch((err) => console.log(err));
 });
 
 module.exports = challengeRouter;
