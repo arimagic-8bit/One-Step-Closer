@@ -21,32 +21,35 @@ This app will help the user to reduce it's carbon footstep by making challenges.
 - **create challenge** - As a user I want to be able to create a challenge.
 - **list of actual challenges** - As a user I want to see the list of accepted challenges, complete or give up them.
 - **list of created challenges** - As a user I want to see all the challenges I created, edit or delete them.
-- **badge's collection** - As a user I want to see all the earned badges.
+
+  
 
 
 
 ## Server Routes (Back-end):
 
-| **Method** | **Route**                        | **Description**                                              | Request - Body                   | Views                      |
-| ---------- | :------------------------------- | ------------------------------------------------------------ | -------------------------------- | :------------------------- |
-| `GET`      | `/`                              | Main page route. Renders home `index` view.                  |                                  | Index view                 |
-| `GET`      | `/login`                         | Renders `login` form view.                                   |                                  | Log in form view           |
-| `POST`     | `/login`                         | Sends Login form data to the server.                         | { username, password }           | Main view                  |
-| `GET`      | `/signup`                        | Renders `signup` form view.                                  |                                  | Sign up form view          |
-| `POST`     | `/signup`                        | Sends Sign Up info to the server and creates user in the DB. | { username, password }           | Main view                  |
-| `GET`      | `/challenge`                     | Renders the main view.                                       |                                  |                            |
-| `GET`      | `/challenge/typeOf`              | Renders a view of challenges for the selected category       |                                  | typeOf challenges view     |
-| `GET`      | `/challenge/typeOf/:id`          | Renders a view of selected challenge                         |                                  | id challenge view          |
-| `POST`     | `/challenge/typeOf/:id/accept`   | Adds challenge to list of actual challenges.                 | {name, img, description, status} | actual challenges view     |
-| `PUT`      | `/challenge/typeOf/:id/complete` | Change challenge status to true and updates it in DB.        |                                  | id challenge view          |
-| ``DELETE`` | `/challenge/typeOf/:id/leave`    | Deletes challenge from actual challenge list.                |                                  | actual challenges view     |
-| ``GET``    | `/challenge/create`              | Renders create challenge form view                           |                                  | create challenge form view |
-| `POST`     | `/challenge/create`              | Creates challenge in the DB and adds challenge to list of created challenges. | {name, img, description}         | created challenges view    |
-| ``PUT``    | `/challenge/create/:id/edit`     | `Edits challenge and updates it from the DB.`                |                                  | id challenge view          |
-| `DELETE`   | `/challenge/create/:id/delete`   | Deletes challenge from created challenge list.               |                                  | created challenges view    |
-| ``GET``    | `/user/actual-challenges`        | Renders view of accepted challenges view                     |                                  | accepted challenges view   |
-| ``GET``    | `/user/created-challenges`       | Renders view of created challenges view                      |                                  | created challenges view    |
-| ``GET``    | `/user/badges`                   | Renders view of badges collection                            |                                  | badges collection view     |
+| **Method** | **Route**                      | **Description**                                              | Request - Body                   | Views                      |
+| ---------- | :----------------------------- | ------------------------------------------------------------ | -------------------------------- | :------------------------- |
+| `GET`      | `/`                            | Main page route. Renders home `index` view.                  |                                  | Index view                 |
+| `GET`      | `/login`                       | Renders `login` form view.                                   |                                  | Log in form view           |
+| `POST`     | `/login`                       | Sends Login form data to the server.                         | { username, password }           | Main view                  |
+| `GET`      | `/signup`                      | Renders `signup` form view.                                  |                                  | Sign up form view          |
+| `POST`     | `/signup`                      | Sends Sign Up info to the server and creates user in the DB. | { username, password }           | Main view                  |
+| `GET`      | `/logout`                      | Redirects to `/`                                             |                                  |                            |
+| `GET`      | `/challenge`                   | Renders the main view.                                       |                                  |                            |
+| `GET`      | `/challenge/:type`             | Renders a view of challenges for the selected category       |                                  | typeOf challenges view     |
+| `GET`      | `/challenge/:id`               | Renders a view of selected challenge                         |                                  | id challenge view          |
+| `POST`     | `/challenge/:id/accept`        | Adds challenge to list of actual challenges.                 | {name, img, description, status} | actual challenges view     |
+| ``GET``    | `/challenge/create`            | Renders create challenge form view                           |                                  | create challenge form view |
+| `POST`     | `/challenge/create`            | Creates challenge in the DB and adds challenge to list of created challenges. | {name, img, description}         | created challenges view    |
+| ``GET``    | `/users/:id/edit`              | Renders edit form                                            |                                  |                            |
+| ``PUT``    | `/users/:id/edit`              | `Edits challenge and updates it from the DB.`                |                                  | id challenge view          |
+| ``GET``    | `/user/actual`                 | Renders view of accepted challenges view                     |                                  | accepted challenges view   |
+| ``GET``    | `/user/created`                | Renders view of created challenges view                      |                                  | created challenges view    |
+| ``GET``    | `/users/created/:id/details`   | Renders created challenge view                               |                                  |                            |
+| ``POST``   | `/users/:id/leave`             | Deletes challenge from actual challenge list.                |                                  | actual challenges view     |
+| ``POST``   | `/challenge/create/:id/delete` | Deletes challenge from created challenge list.               |                                  | created challenges view    |
+| ``POST``   | `/users/:id/completed`         | Changes state of accepted challenge to complete and adds it to completed list |                                  |                            |
 
 
 
@@ -58,11 +61,12 @@ User model
 {
   username: String,
   password: String,
-  actual-challenges: [challengeId],
-  created-challenges:[challengeId],
-  created-challenges:[challengeId],
-  badges: [{ category: imageUrl}],
-  //friends: [userId]
+  actualChallenges: [Schema.Types.ObjectId],
+  createdChallenges:[Schema.Types.ObjectId],
+  createdChallenges:[Schema.Types.ObjectId],
+  //badges: [{ category: imageUrl}],
+  //imageUrl: String,
+  //friends: [Schema.Types.ObjectId]
 }
 ```
 
@@ -71,10 +75,11 @@ Challenge model
 ```
 {
   name: String,
+  type: String,
   image: String,
   description: String,
   status: Boolean,
-  author: userId,
+  author: Schema.Types.ObjectId,
   // usersDoingChallenge: [userId]
   // usersCompletedChallenge: [userId]
 }
@@ -86,6 +91,7 @@ Challenge model
 
 - Social feature: Add friends, see their challenges and team-up with them.
 - Web page moderator
+- Badge collection
 
 
 
@@ -93,13 +99,8 @@ Challenge model
 
 ### Git
 
-The url to your repository and to your deployed project
+https://one-step-closer-app.herokuapp.com/
 
+### Figma wireframes
 
-
-
-
-### Slides
-
-The url to your presentation slides
-
+https://www.figma.com/file/bKTC2ezphoDdE1r6vpzEkv/One-Step-Closer?node-id=0%3A1
