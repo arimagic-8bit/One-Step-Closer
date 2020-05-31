@@ -108,7 +108,7 @@ https://www.figma.com/file/bKTC2ezphoDdE1r6vpzEkv/One-Step-Closer?node-id=0%3A1
 
 ## Creators
 
-### Alberto Pagoria
+## Alberto Pagoria
 
 ### Linkedin:
 https://www.linkedin.com/in/albertopagoria/
@@ -116,7 +116,7 @@ https://www.linkedin.com/in/albertopagoria/
 ### GitHub:
 https://github.com/alpagor
 
-### Ariadna Díaz
+## Ariadna Díaz
 
 ### Linkedin:
 https://www.linkedin.com/in/ariadna-d%C3%ADaz-baggerman/
