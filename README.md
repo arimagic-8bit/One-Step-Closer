@@ -104,3 +104,22 @@ https://one-step-closer-app.herokuapp.com/
 ### Figma wireframes
 
 https://www.figma.com/file/bKTC2ezphoDdE1r6vpzEkv/One-Step-Closer?node-id=0%3A1
+
+
+## Creators
+
+### Alberto Pagoria
+
+### Linkedin:
+https://www.linkedin.com/in/albertopagoria/
+
+### GitHub:
+https://github.com/alpagor
+
+### Ariadna Díaz
+
+### Linkedin:
+https://www.linkedin.com/in/ariadna-d%C3%ADaz-baggerman/
+
+### GitHub:
+https://github.com/arimagic-8bit
